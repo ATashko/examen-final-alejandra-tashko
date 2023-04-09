@@ -1,4 +1,5 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
+import axios from "axios";
 
 export const GlobalContext = createContext();
 
@@ -41,12 +42,20 @@ const globalReducer = (state, action) => {
       return { ...state, isDark: !state.isDark };
 
     default:
-      state;
+      return state;
   }
 };
 
 const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, initialState);
+  useEffect(() => {
+    const getDentists = axios.get("https://jsonplaceholder.typicode.com/users");
+    getDentists
+      .then((res) => dispatch({ type: "GET_USERS", payload: res.data }))
+      .catch((err) => console.log(err));
+  }, []);
+
+ 
 
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>

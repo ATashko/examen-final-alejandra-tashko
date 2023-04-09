@@ -8,18 +8,20 @@ import axios from 'axios';
 
 
 const DetailContainer = () => {
-    const { dispatch } = useContext(GlobalContext);
-    const { id } = useParams();
+   
+ const { state, dispatch } = useContext(GlobalContext);
+ const { id } = useParams();
 
-    useEffect(() => {
-      const getUser = axios.get(
-        `https://jsonplaceholder.typicode.com/users/${id}`
-      );
-      getUser.then((res) => dispatch({ type: "GET_USER", payload: res.data }));
-    }, []);
+ useEffect(() => {
+   const getUser = axios.get(
+     `https://jsonplaceholder.typicode.com/users/${id}`
+   );
+   getUser.then((res) => dispatch({ type: "GET_USER", payload: res.data }));
+ }, []);
+  
   return (
     <div>
-      <Detail user={state.users} />
+      <Detail user={state.user} />
     </div>
   );
 }

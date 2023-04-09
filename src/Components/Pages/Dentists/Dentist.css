@@ -1,0 +1,9 @@
+.container-light{
+    background-color: white;
+    color: black;
+    
+}
+.container-dark{
+    background-color: rgba(0, 0, 0, 87);
+    color: white;
+}

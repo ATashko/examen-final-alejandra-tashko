@@ -11,13 +11,18 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../../../Context/GlobalContext";
 
-const Dentist = ({ users, dispatch, favs }) => {
+const Dentist = () => {
+
+  const { state, dispatch } = useContext(GlobalContext);
+  const { users, favs } = state
+
   return (
     <div>
-      
+      {console.log(users)}
       {users &&
         users.map((user) => {
           return (

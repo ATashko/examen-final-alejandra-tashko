@@ -6,9 +6,8 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { GlobalContext } from "../../../Context/GlobalContext";
 
-
 const Detail = (user) => {
-    const { state } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
 
   return (
     <div className={state.isDark ? "container-dark" : "container-light"}>
