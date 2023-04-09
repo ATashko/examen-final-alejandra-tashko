@@ -12,7 +12,11 @@ const FavoritesContainer = () => {
   return (
     <div className={state.isDark ? "container-dark" : "container-light"}>
       {state.favs.map((e) => (
-        <Card sx={{ maxWidth: 345 }} key={e.id}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          key={e.id}
+          
+        >
           <CardActionArea>
             <CardMedia
               component="img"

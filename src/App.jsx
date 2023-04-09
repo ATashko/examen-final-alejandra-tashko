@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalContextProvider from "./Context/GlobalContext";
 import Footer from "./Components/Layout/Footer/Footer"
 import Navbar from "./Components/Layout/Navbar/Navbar";
-import Contact from "./Components/Pages/Contact/Contact"
+import ContactForm from "./Components/Pages/Contact/ContactForm";
 import Dentist from "./Components/Pages/Dentists/Dentist"
 import Detail from "./Components/Pages/Detail/Detail" 
 import Favorites from "./Components/Pages/Favorites/Favorites"
@@ -18,7 +18,7 @@ function App() {
             <Route element={<Footer />}>
               <Route element={<Navbar />}>
                 <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/contact" element={<ContactForm />} />
                 <Route path="/dentists" element={<Dentist />} />
                 <Route path="/dentist/:id" element={<Detail />} />
                 <Route path="/favs" element={<Favorites />} />

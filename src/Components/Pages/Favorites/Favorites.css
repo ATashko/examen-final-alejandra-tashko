@@ -1,1 +1,9 @@
-
+.container-light{
+    background-color: white;
+    color: black;
+    
+}
+.container-dark{
+    background-color: rgb(rgb(83, 83, 83));
+    color: white;
+}

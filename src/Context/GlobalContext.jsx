@@ -22,12 +22,11 @@ const globalReducer = (state, action) => {
       return { ...state, users: action.payload };
 
     case "GET_USER":
-      return { ...state, user: action.payload };
+      return { ...state, user: action.payload.id };
 
     case "HANDLE_FAVORITE":
       const isInFavorite = state.favs.some(
-        (fav) => fav.id === action.payload.id
-      );
+        (fav) => fav.id === action.payload);
       isInFavorite
         ? removefav(action.payload.id, state)
         : localStorage.setItem(
@@ -54,6 +53,8 @@ const GlobalContextProvider = ({ children }) => {
       .then((res) => dispatch({ type: "GET_USERS", payload: res.data }))
       .catch((err) => console.log(err));
   }, []);
+
+ 
 
  
 

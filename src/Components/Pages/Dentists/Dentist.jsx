@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
+import "./Dentist.css"
+
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../../Context/GlobalContext";
@@ -21,12 +23,16 @@ const Dentist = () => {
   const { users, favs } = state
 
   return (
-    <div>
+    <div className={state.isDark ? "container-dark" : "container-light"}>
       {console.log(users)}
       {users &&
         users.map((user) => {
           return (
-            <Card sx={{ maxWidth: 345 }} key={user.id}>
+            <Card
+              sx={{ maxWidth: 345 }}
+              key={user.id}
+              className={state.isDark ? "container-dark" : "container-light"}
+            >
               <CardHeader
                 avatar={
                   <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
